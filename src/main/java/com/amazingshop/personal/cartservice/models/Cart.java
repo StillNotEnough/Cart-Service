@@ -7,6 +7,7 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "Cart")
@@ -32,4 +33,17 @@ public class Cart {
     @NotNull(message = "Updated date cannot be null")
     private LocalDateTime updatedAt;
 
+    @OneToMany(mappedBy = "cart")
+    private List<CartItem> cartItems;
+
+    public Cart(){
+
+    }
+
+    public Cart(Long userId, LocalDateTime createdAt, LocalDateTime updatedAt, List<CartItem> cartItems) {
+        this.userId = userId;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+        this.cartItems = cartItems;
+    }
 }
