@@ -2,16 +2,22 @@ package com.amazingshop.personal.cartservice.models;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
-@Table(name = "Cart")
+@Table(name = "cart")
 @Data
+@EntityListeners(AuditingEntityListener.class)
+@NoArgsConstructor
+@AllArgsConstructor
 public class Cart {
 
     @Id
@@ -19,7 +25,7 @@ public class Cart {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "user_id", nullable = false)
+    @Column(name = "user_id", nullable = false, unique = true)
     @NotNull(message = "User ID cannot be null")
     private Long userId;
 
@@ -29,21 +35,21 @@ public class Cart {
     private LocalDateTime createdAt;
 
     @LastModifiedDate
-    @Column(name = "updated_at")
+    @Column(name = "updated_at", nullable = false)
     @NotNull(message = "Updated date cannot be null")
     private LocalDateTime updatedAt;
 
-    @OneToMany(mappedBy = "cart")
+    @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<CartItem> cartItems;
-
-    public Cart(){
-
-    }
 
     public Cart(Long userId, LocalDateTime createdAt, LocalDateTime updatedAt, List<CartItem> cartItems) {
         this.userId = userId;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
         this.cartItems = cartItems;
+    }
+
+    public Cart(Long userId){
+        this.userId = userId;
     }
 }

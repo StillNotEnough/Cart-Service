@@ -4,13 +4,17 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.math.BigDecimal;
 
 @Setter
 @Getter
+@NoArgsConstructor
+@AllArgsConstructor
 public class ProductDTO {
 
     @Id
@@ -28,10 +32,6 @@ public class ProductDTO {
     @NotNull(message = "Stock cannot be null")
     @Min(value = 0, message = "Stock must be at least 0")
     private Integer stock;
-
-    public ProductDTO() {
-
-    }
 
     public ProductDTO(String name, BigDecimal price, Integer stock) {
         this.name = name;

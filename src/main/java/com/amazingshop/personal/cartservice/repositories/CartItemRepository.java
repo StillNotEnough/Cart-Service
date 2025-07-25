@@ -11,5 +11,4 @@ import java.util.Optional;
 public interface CartItemRepository extends JpaRepository<CartItem, Long> {
     Optional<CartItem> findCartItemByCartIdAndProductId
             (Long cartId, @NotNull(message = "Product ID cannot be null") Long productId);
-
 }
