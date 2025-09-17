@@ -1,4 +1,4 @@
-package com.amazingshop.personal.cartservice.dto;
+package com.amazingshop.personal.cartservice.dto.requests;
 
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;

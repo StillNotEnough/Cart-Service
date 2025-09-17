@@ -1,4 +1,4 @@
-package com.amazingshop.personal.cartservice.dto;
+package com.amazingshop.personal.cartservice.dto.requests;
 
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;

@@ -1,10 +1,10 @@
 package com.amazingshop.personal.cartservice.controllers;
 
-import com.amazingshop.personal.cartservice.dto.CartRequest;
-import com.amazingshop.personal.cartservice.dto.UpdateQuantityRequest;
+import com.amazingshop.personal.cartservice.dto.requests.CartRequest;
+import com.amazingshop.personal.cartservice.dto.requests.UpdateQuantityRequest;
 import com.amazingshop.personal.cartservice.services.CartService;
-import com.amazingshop.personal.cartservice.util.responses.CartResponse;
-import com.amazingshop.personal.cartservice.util.responses.CartSummaryResponse;
+import com.amazingshop.personal.cartservice.dto.responses.CartResponse;
+import com.amazingshop.personal.cartservice.dto.responses.CartSummaryResponse;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Positive;
 import lombok.extern.slf4j.Slf4j;

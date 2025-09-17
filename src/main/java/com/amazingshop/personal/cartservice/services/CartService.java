@@ -1,13 +1,13 @@
 package com.amazingshop.personal.cartservice.services;
 
-import com.amazingshop.personal.cartservice.dto.CartRequest;
-import com.amazingshop.personal.cartservice.dto.ProductDTO;
+import com.amazingshop.personal.cartservice.dto.requests.CartRequest;
+import com.amazingshop.personal.cartservice.dto.requests.ProductDTO;
 import com.amazingshop.personal.cartservice.models.Cart;
 import com.amazingshop.personal.cartservice.models.CartItem;
 import com.amazingshop.personal.cartservice.repositories.CartItemRepository;
 import com.amazingshop.personal.cartservice.repositories.CartRepository;
-import com.amazingshop.personal.cartservice.util.responses.CartResponse;
-import com.amazingshop.personal.cartservice.util.responses.CartSummaryResponse;
+import com.amazingshop.personal.cartservice.dto.responses.CartResponse;
+import com.amazingshop.personal.cartservice.dto.responses.CartSummaryResponse;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

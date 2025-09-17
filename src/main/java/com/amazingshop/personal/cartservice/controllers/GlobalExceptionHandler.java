@@ -4,7 +4,7 @@ import com.amazingshop.personal.cartservice.util.exceptions.CartNotFoundExceptio
 import com.amazingshop.personal.cartservice.util.exceptions.InsufficientStockException;
 import com.amazingshop.personal.cartservice.util.exceptions.ProductNotFoundException;
 import com.amazingshop.personal.cartservice.util.exceptions.UserNotFoundException;
-import com.amazingshop.personal.cartservice.util.responses.ErrorResponse;
+import com.amazingshop.personal.cartservice.dto.responses.ErrorResponse;
 import jakarta.validation.ConstraintViolationException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -17,8 +17,8 @@ import org.springframework.web.method.annotation.MethodArgumentTypeMismatchExcep
 import java.util.HashMap;
 import java.util.Map;
 
-@RestControllerAdvice
 @Slf4j
+@RestControllerAdvice
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(CartNotFoundException.class)
