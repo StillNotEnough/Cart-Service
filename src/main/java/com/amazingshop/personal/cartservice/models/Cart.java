@@ -2,9 +2,7 @@ package com.amazingshop.personal.cartservice.models;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -13,11 +11,14 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
-@Table(name = "cart")
-@Data
-@EntityListeners(AuditingEntityListener.class)
+@Getter
+@Setter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "Cart")
+@EntityListeners(AuditingEntityListener.class)
+@EqualsAndHashCode(exclude = {"id", "createdAt", "updatedAt"})
 public class Cart {
 
     @Id
