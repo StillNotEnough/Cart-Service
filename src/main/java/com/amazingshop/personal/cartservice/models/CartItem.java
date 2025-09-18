@@ -4,17 +4,18 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.math.BigDecimal;
 
 @Entity
-@Table(name = "cart_item")
-@Data
+@Setter
+@Getter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "Cart_Item")
+@EqualsAndHashCode(exclude = {"id", "productId"})
 public class CartItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
