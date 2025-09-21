@@ -16,7 +16,7 @@ public class CartServiceApplication {
     }
 
     @Bean
-    public ModelMapper modelMapper() {
+    public ModelMapper modelMapper(){
         return new ModelMapper();
     }
 
